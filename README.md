@@ -1,2 +1,2 @@
 # Invy
-In Javascript de voorraadbeheer website Invy maken. Opdracht was voor blok 7 van jaar 2 van de Informatica opleiding op Avans Hogeschool Den Bosch. 
+The storage manager website Invy made In Javascript. This assignment was for period 7 of year 2 of the Computer Science study at Avans University Den Bosch  
