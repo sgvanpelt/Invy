@@ -1,0 +1,304 @@
+<!doctype html>
+    <html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../Css/Index.css">
+        <link rel="stylesheet" href="../Css/Weather.css">
+        <link rel='stylesheet' type='text/css' href='../Css/Wizard.css'>
+
+        <title>D'n Oetel</title>
+    </head>
+
+    <body>
+        <br>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-2 " id="col1">
+                    <div class="titleHead">
+                        <h2>D'n Oetel</h2>
+                    </div>
+                    <hr>
+                    <div class="regio">
+                        <h3>Regio</h3>
+                            <button type="button" class="btn btn-default btn-lg" id="Clothing">Kleding</button>
+                            <button type="button"  class="btn btn-default btn-lg" id="Tierlantin">Tierlantijn</button>
+                            <button type="button"  class="btn btn-default btn-lg" id="Decoration">Decoratie</button>
+                    </div>
+                    <hr>
+                    <div class="form">
+                        <button type="button" class="btn btn-default btn-lg" id="StartForm">Product aanmaken</button>
+                    </div>
+                    <hr>
+                    <div class="Weather_div">
+                        <div class="input">
+                            <input id="input1" type="text" class="inputValue" placeholder="Voer een stads naam in">
+                            <input id="button1" type="submit" value="Submit" class="weatherbutton">
+                        </div>
+                        <div class="app-title"><p>Weer</p></div>
+                        <div class="notification"></div>
+                        <div class="weather-container">
+
+                            <div class="weather-icon">
+                                <img src="../Icons/unknown.png" alt="">
+                            </div>
+                            <div class="temperature-value">
+                                <p>- °<span>C</span></p>
+                            </div>
+                            <div class="temperature-description">
+                                <p>-</p>
+                            </div>
+                            <div class="location">
+                                <p>-</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <label><h3>Producten: </h3></label>
+                    <button id="sidebutton" type="button">Producten \/</button>
+                    <div id="HiddenProducts" class="draggable-items"></div>
+                    <br>
+                </div>
+
+                <div class="col-md-10" id="col2">
+                    <h2 class="page-header" id="Header"></h2>
+                    <hr>
+
+                    <form>
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 id="modalHeader"></h2>
+                                <span class="close">X</span>
+                            </div>
+                            <div class="modal-body">
+                                <h4>Foto uploaden</h4>
+                                <div>
+                                    <input type="file" id="image1"/>
+                                    <label for="image1" class="btn btn-primary" id="imagelabel">Foto uploaden</label>
+                                </div>
+                                <hr>
+                                <h4>Schade tekenen</h4>
+                                <canvas id="ImageCanvas"></canvas>
+                            </div>
+                            <div class="modal-footer">
+                                <p>Afbeelding/canvas wordt automatsich opgeslagen</p>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+
+                    <div id="thegrid">
+                    <div id="grid"> </div>
+                    </div>
+
+                    <div class='paste-styled col-md-10'>
+                        <div class='step-by-step' id='setup'>
+
+                            <!-- 1 -->
+                            <div class='step-by-step-step split-h'>
+                                <div class='default-content push-down centered-content maximize-height'>
+                                    <h3>Hallo!</h3>
+                                    <p>Welkom bij de producten wizard</p>
+                                </div>
+                                <div class='step-by-step-stepper'>
+                                    <button class='button button-small button-small-primary material-icons' data-type='next'>-></button>
+                                </div>
+                            </div>
+
+                            <!-- 1 -->
+                            <div class='step-by-step-step split-h' data-name='product_form'>
+                                <div class='default-content push-down centered-content maximize-height'>
+                                    <h3>Product</h3>
+                                    <p>
+                                        Details
+                                    </p>
+                                </div>
+                                <div class='default-content'>
+                                    <div class='form'>
+                                        <label for='product_name'>
+                                            Product Naam
+                                            <input type='text' name='product_name' id='product_name' placeholder='t-shirt'/>
+                                        </label>
+                                        <label for='product_description'>
+                                            Beschrijving
+                                            <input type='text' name='product_description' id='product_description' placeholder='uitleg over product'/>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class='step-by-step-stepper'>
+                                    <button class='button button-small button-small-primary material-icons' data-type='next'>-></button>
+                                </div>
+                            </div>
+
+                            <!-- 2 -->
+                            <div class='step-by-step-step split-h'>
+                                <div class='default-content push-down centered-content maximize-height'>
+                                    <h3>Product</h3>
+                                    <p>
+                                        Regio<br>
+                                    </p>
+                                </div>
+                                <div class='default-content'>
+                                    <div class='form'>
+                                        <label for='product_region'>
+                                            Regio
+                                            <select name="product_region" id="product_region">
+                                                <option value="Kleding">
+                                                    Kleding
+                                                </option>
+                                                <option value="Tierlantijn">
+                                                    Tierlantijn
+                                                </option>
+                                                <option value="Decoratie">
+                                                    Decoratie
+                                                </option>
+                                            </select>
+                                        </label>
+                                        <div class="form-group" id="fieldGroupDivClothing">
+                                            <label for='clothing_colour'>
+                                                Kleur
+                                                <input type='text' name='clothing_colour' id='clothing_colour' placeholder='Wit'/>
+                                            </label>
+                                            <label for='product_size'>
+                                                Maat
+                                                <select name="product_size" id="product_size">
+                                                    <option value="S">
+                                                        S
+                                                    </option>
+                                                    <option value="M">
+                                                        M
+                                                    </option>
+                                                    <option value="L">
+                                                        L
+                                                    </option>
+                                                    <option value="XL">
+                                                        XL
+                                                    </option>
+                                                    <option value="XXL">
+                                                        XXL
+                                                    </option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                        <div class="form-group" id="fieldGroupDivTierlantijn">
+                                            <label for='weight'>
+                                                Gewicht in KG
+                                                <input type='number' name='weight' id='weight' placeholder='5'/>
+                                            </label>
+                                        </div>
+                                        <div class="form-group" id="fieldGroupDivDecoration">
+                                            <label for='size_in_cm'>
+                                                Grootte in CM
+                                                <input type='number' name='size_in_cm' id='size_in_cm' placeholder='80'/>
+                                            </label>
+                                            <label for='decoration_colour'>
+                                                Kleur
+                                                <input type='text' name='decoration_colour' id='decoration_colour' placeholder='Blauw'/>
+                                            </label>
+                                            <label for='amount_in_package'>
+                                                Hoeveelheid in verpakking
+                                                <input type='number' name='amount_in_package' id='amount_in_package' placeholder='10'/>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='step-by-step-stepper'>
+                                    <button class='button button-small button-small-primary material-icons' data-type='next'>-></button>
+                                </div>
+                            </div>
+
+                            <!-- 3 -->
+                            <div class='step-by-step-step split-h'>
+                                <div class='default-content push-down centered-content maximize-height'>
+                                    <h3>Product</h3>
+                                    <p>
+                                        Informatie<br>
+                                    </p>
+                                </div>
+                                <div class='default-content'>
+                                    <div class='form'>
+                                        <label for='product_buy_price'>
+                                            Product Inkoopprijs
+                                            <input type='number' name='product_buy_price' id='product_buy_price' placeholder='10.00'/>
+                                        </label>
+                                        <label for='product_sell_price'>
+                                            Product Verkoopprijs excl btw
+                                            <input type='number' name='product_sell_price' id='product_sell_price' placeholder='25.00'/>
+                                        </label>
+                                        <label for='product_sell_price_btw'>
+                                            Product Verkoopprijs incl btw
+                                            <input type='number' name='product_sell_price_btw' id='product_sell_price_btw' placeholder='30.00'/>
+                                        </label>
+                                        <label for='product_minimal_storage'>
+                                            Minimale voorraad
+                                            <input type='number' name='product_minimal_storage' id='product_minimal_storage' placeholder='50'/>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <h5 align="center">Calculator</h5>
+                                        <div class="float-right">
+                                            <button class="button button-small" name="calculator_plus" id="calculator_redo" value="Redo"> Redo </button>
+                                            <button class="button button-small" name="calculator_plus" id="calculator_plus" value="+"> + </button>
+                                            <button class="button button-small" name="calculator_minus" id="calculator_minus" value="-"> - </button>
+                                            <button class="button button-small" name="calculator_times" id="calculator_times" value="*"> * </button>
+                                            <button class="button button-small" name="calculator_divide" id="calculator_divide" value="/"> / </button>
+                                            <button class="button button-small" name="calculator_equals" id="calculator_equals" value="/"> = </button>
+                                        </div>
+                                        <div class="form" id="calculatorfields">
+                                            <input type='number' name='calculator_field1' id='calculator_field1' placeholder='50'/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='step-by-step-stepper'>
+                                    <button class='button button-small button-small-primary' data-type='next'>-></button>
+                                </div>
+                            </div>
+
+                            <!-- 4 -->
+                            <div class='step-by-step-step split-h'>
+                                <div class='default-content push-down centered-content maximize-height'>
+                                    <h3>Speciaal product</h3>
+                                    <p>
+                                        Wilt u een extra product eigenschap toevoegen aan dit product?<br>
+                                    </p>
+                                </div>
+                                <div class='default-content'>
+                                    <button type="button" class="btn btn-default btn-lg" id="AddField">Voeg extra eigenschap toe</button>
+                                    <div class='form' id="extrafield">
+
+                                    </div>
+                                </div>
+                                <div class='step-by-step-stepper'>
+                                    <button id="btn" class='button button-small button-small-primary material-icons' data-type='next'>-></button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- JavaScript -->
+        <script src="bundle.js"></script>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+</html>
